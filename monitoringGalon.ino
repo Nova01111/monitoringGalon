@@ -1,11 +1,10 @@
+#define BLYNK_TEMPLATE_ID "TMPL6DiXtwnct"
+#define BLYNK_TEMPLATE_NAME "monitoringGalon"
+
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 #include <ESP8266WiFi.h>
 #include <BlynkSimpleEsp8266.h>
-
-// ---------- Konfigurasi Blynk Template ----------
-#define BLYNK_TEMPLATE_ID "TMPL6DiXtwnct"
-#define BLYNK_TEMPLATE_NAME "monitoringGalon"
 
 // ---------- Pin ----------
 #define TRIG_PIN D5

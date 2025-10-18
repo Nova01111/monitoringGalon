@@ -2,7 +2,6 @@
 #include <LiquidCrystal_I2C.h>
 #include <ESP8266WiFi.h>
 #include <BlynkSimpleEsp8266.h>
-#include <BlynkTimer.h>
 
 // ---------- Konfigurasi Blynk Template ----------
 #define BLYNK_TEMPLATE_ID "TMPL6DiXtwnct"

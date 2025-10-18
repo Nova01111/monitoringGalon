@@ -1,23 +1,22 @@
-#define BLYNK_TEMPLATE_ID "TMPL6DiXtwnct"
-#define BLYNK_TEMPLATE_NAME "monitoringGalon"
-#define BLYNK_AUTH_TOKEN "AjZDYqbcqt1DufxccSTudCocxXrk7-L2"
-
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 #include <ESP8266WiFi.h>
 #include <BlynkSimpleEsp8266.h>
+#include <BlynkTimer.h>
 
+// ---------- Konfigurasi Blynk Template ----------
+#define BLYNK_TEMPLATE_ID "TMPL6DiXtwnct"
+#define BLYNK_TEMPLATE_NAME "monitoringGalon"
+
+// ---------- Pin ----------
 #define TRIG_PIN D5
 #define ECHO_PIN D6
 #define BUZZER_PIN D4
 #define LED_PIN D7
 
+// ---------- LCD & Timer ----------
 LiquidCrystal_I2C lcd(0x27, 16, 2);
 BlynkTimer timer;
-
-// ---------- WiFi ----------
-char ssid[] = "Zanira";
-char pass[] = "ANIHARTATI123";
 
 // ---------- Parameter default ----------
 float tinggiGelas = 6.5;   // cm
@@ -184,7 +183,9 @@ void setup() {
   lcd.setCursor(0, 0);
   lcd.print("Menghubungkan...");
 
-  Blynk.begin(BLYNK_AUTH_TOKEN, ssid, pass);
+  // koneksi ke WiFi dan Blynk menggunakan credential dari credential.h
+  Blynk.begin(BLYNK_AUTH_TOKEN, WIFI_SSID, WIFI_PASS);
+
   lcd.clear();
   lcd.print("Monitoring Air");
   delay(1000);

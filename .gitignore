@@ -1,4 +1,4 @@
-credential.h.ino
+credential.h
 *.bak
 *.tmp
 *.hex
